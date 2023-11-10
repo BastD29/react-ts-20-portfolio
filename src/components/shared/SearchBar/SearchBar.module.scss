@@ -1,0 +1,27 @@
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 40px;
+  // border: 1px solid red;
+
+  input {
+    height: 100%;
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  input:hover {
+    border-right: none;
+  }
+
+  &__button {
+    height: 100%;
+
+    svg {
+      fill: white;
+    }
+  }
+}

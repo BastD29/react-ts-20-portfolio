@@ -1,0 +1,12 @@
+.header {
+  // h1 {
+  //   color: pink;
+  // }
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 24px;
+}
