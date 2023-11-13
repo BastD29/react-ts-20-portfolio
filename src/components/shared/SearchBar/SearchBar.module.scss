@@ -4,7 +4,13 @@
   align-items: center;
 
   height: 40px;
-  // border: 1px solid red;
+
+  &__button {
+    background-color: #1677ff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10px;
+  }
 
   input {
     height: 100%;

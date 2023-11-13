@@ -9,4 +9,24 @@
   justify-content: space-between;
 
   padding: 24px;
+
+  &__navbar--dark {
+    ul {
+      li {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__navbar--light {
+    ul {
+      li {
+        a {
+          color: black;
+        }
+      }
+    }
+  }
 }

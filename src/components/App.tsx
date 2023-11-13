@@ -26,7 +26,6 @@ const App = () => {
         <Route path={REGISTER} element={<Register />} />
       </Route>
 
-      {/* <Route path={ROOT} element={<DashboardLayout />}> */}
       <Route path={ROOT} element={<DashboardLayout />}>
         <Route element={<PageLayout />}>
           <Route path={HOME} element={<Home />} />

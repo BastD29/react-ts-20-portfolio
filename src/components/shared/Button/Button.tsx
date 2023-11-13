@@ -6,11 +6,14 @@ import styles from "./Button.module.scss";
 interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
   icon?: React.ReactElement;
-  // onClick: () => void;
+  onClick?: () => void;
 }
 
-const Button: FC<CustomButtonProps> = ({ text, icon, className }) => (
-  <button className={`${styles["button"]} ${className || ""}`}>
+const Button: FC<CustomButtonProps> = ({ text, icon, className, onClick }) => (
+  <button
+    className={`${styles["button"]} ${className || ""}`}
+    onClick={onClick}
+  >
     {text && <span className={styles["button__text"]}>{text}</span>}
     {icon && <Icon icon={icon} />}
   </button>
