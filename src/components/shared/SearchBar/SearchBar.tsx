@@ -10,9 +10,10 @@ import styles from "./SearchBar.module.scss";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
+  className?: string;
 }
 
-const SearchBar: FC<SearchBarProps> = ({ onSearch }) => {
+const SearchBar: FC<SearchBarProps> = ({ onSearch, className }) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +26,10 @@ const SearchBar: FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <Form onSubmit={handleSearch} className={styles["search-bar"]}>
+    <Form
+      onSubmit={handleSearch}
+      className={`${styles["search-bar"]} ${className || ""}`}
+    >
       <Input
         className={styles["search-bar__input"]}
         type="text"

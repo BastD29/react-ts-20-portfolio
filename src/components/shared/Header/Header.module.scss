@@ -1,32 +1,112 @@
-.header {
-  // h1 {
-  //   color: pink;
-  // }
+@use "../../../style/abstracts/variables" as variables;
+@use "../../../style/abstracts/mixins" as mixins;
+@use "sass:map";
 
+.header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 
+  position: relative;
+
   padding: 24px;
 
-  &__navbar--dark {
-    ul {
-      li {
-        a {
-          color: white;
+  &__left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 75px;
+  }
+
+  &__navbar {
+    &--dark {
+      ul {
+        li {
+          a {
+            color: map-get($map: variables.$dark-theme, $key: "text-white-1");
+          }
+        }
+      }
+    }
+
+    &--light {
+      ul {
+        li {
+          a {
+            color: map-get($map: variables.$light-theme, $key: "text-black-1");
+          }
         }
       }
     }
   }
 
-  &__navbar--light {
-    ul {
-      li {
-        a {
-          color: black;
-        }
-      }
+  &__button {
+    background-color: transparent;
+  }
+
+  &__mobile-menu {
+    &--dark {
+      background-color: map-get(
+        $map: variables.$light-theme,
+        $key: "background-white-1"
+      );
     }
+
+    &--light {
+      background-color: map-get(
+        $map: variables.$dark-theme,
+        $key: "background-black-1"
+      );
+    }
+  }
+
+  & .mobile-menu-btn {
+    display: none;
+  }
+
+  // Responsive styles
+
+  // $breakpoints: (
+  //   xs: 0,
+  //   sm: 576px,
+  //   md: 768px,
+  //   lg: 1024px,
+  //   xl: 1280px,
+  //   xxl: 1440px,
+  // );
+
+  @include mixins.respond-to(xxl) {
+  }
+
+  @include mixins.respond-to(xl) {
+  }
+
+  @include mixins.respond-to(lg) {
+  }
+
+  @include mixins.respond-to(md) {
+    & .navlinks {
+      display: none;
+    }
+
+    &__searchbar {
+      display: none;
+    }
+
+    & .mobile-menu-btn {
+      display: block;
+    }
+  }
+
+  @include mixins.respond-to(sm) {
+    &__searchbar {
+      display: none;
+    }
+  }
+
+  @include mixins.respond-to(xs) {
   }
 }

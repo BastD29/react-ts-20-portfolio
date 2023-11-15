@@ -32,6 +32,6 @@ export default {
     },
   },
   footer: {
-    message: "Portfolio ©2023 developed by Bastien Daniel",
+    message: "© Portfolio {{year}} developed by Bastien Daniel",
   },
 };

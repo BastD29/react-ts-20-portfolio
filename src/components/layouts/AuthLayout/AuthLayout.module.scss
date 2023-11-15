@@ -3,28 +3,70 @@
 
 .auth-layout {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 
-  h1 {
-    color: blue;
-  }
+  /* HEADER */
 
   &__header {
-    h1 {
-      color: pink;
+    &--dark {
+      background-color: map-get(
+        $map: variables.$dark-theme,
+        $key: "background-black-2"
+      );
+    }
+
+    &--light {
+      background-color: map-get(
+        $map: variables.$light-theme,
+        $key: "background-white-1"
+      );
     }
   }
 
-  &__header--dark {
-    background-color: map-get(
-      $map: variables.$dark-theme,
-      $key: "background-black-1"
-    );
+  /* CONTENT */
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    &--dark {
+      background-color: map-get(
+        $map: variables.$dark-theme,
+        $key: "background-grey-2"
+      );
+    }
+
+    &--light {
+      background-color: map-get(
+        $map: variables.$light-theme,
+        $key: "background-white-2"
+      );
+    }
   }
 
-  &__header--light {
-    background-color: map-get(
-      $map: variables.$light-theme,
-      $key: "background-white-1"
-    );
+  /* FOOTER */
+
+  &__footer {
+    height: variables.$footer-height;
+
+    &--dark {
+      background-color: map-get(
+        $map: variables.$dark-theme,
+        $key: "background-black-2"
+      );
+      color: map-get($map: variables.$dark-theme, $key: "text-white-1");
+    }
+
+    &--light {
+      background-color: map-get(
+        $map: variables.$light-theme,
+        $key: "background-white-1"
+      );
+      color: map-get($map: variables.$light-theme, $key: "text-black-1");
+    }
   }
 }

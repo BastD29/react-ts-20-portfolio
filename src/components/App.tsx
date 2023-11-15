@@ -10,20 +10,21 @@ import {
 } from "../constants/routes";
 
 import Login from "./features/Login/Login";
-import Register from "./features/Register/Register";
+import { Register } from "./features/Register/Register";
 import Home from "./features/Home/Home";
 import About from "./features/About/About";
 import Contact from "./features/Contact/Contact";
 import { AuthLayout } from "./layouts/AuthLayout/AuthLayout";
 import { DashboardLayout } from "./layouts/DashboardLayout/DashboardLayout";
 import { PageLayout } from "./layouts/PageLayout/PageLayout";
+import { Register2 } from "./features/Register2/Register2";
 
 const App = () => {
   return (
     <Routes>
       <Route path={AUTH} element={<AuthLayout />}>
         <Route path={LOGIN} element={<Login />} />
-        <Route path={REGISTER} element={<Register />} />
+        <Route path={REGISTER} element={<Register2 />} />
       </Route>
 
       <Route path={ROOT} element={<DashboardLayout />}>

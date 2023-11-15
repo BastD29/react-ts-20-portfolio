@@ -1,0 +1,44 @@
+@use "../../../style/abstracts/variables" as variables;
+@use "sass:map";
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-gap: 10px;
+
+  width: 100%;
+  max-width: 500px;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 5px;
+
+    input {
+      border-radius: 3px;
+    }
+  }
+}
+
+.register-form--dark {
+  label {
+    color: map-get($map: variables.$dark-theme, $key: "text-white-2");
+  }
+}
+
+.register-form--light {
+  label {
+    color: map-get($map: variables.$light-theme, $key: "text-dark-gray-1");
+  }
+}
+
+.register-button {
+  background-color: #1677ff;
+  color: white;
+  border-radius: 3px;
+  padding: 5px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+}

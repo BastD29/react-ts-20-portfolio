@@ -1,0 +1,28 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //   align-items: center;
+  grid-gap: 10px;
+
+  width: 100%;
+  max-width: 500px;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 5px;
+
+    input {
+      border-radius: 3px;
+    }
+  }
+
+  &__button {
+    background-color: #1677ff;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    margin-top: 10px;
+  }
+}

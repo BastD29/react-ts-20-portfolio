@@ -19,7 +19,14 @@ const Navbar: FC<NavbarProps> = ({ className, links }) => {
       <ul>
         {links.map((link) => (
           <li key={link.title}>
-            <NavLink to={link.path}>{link.title}</NavLink>
+            <NavLink
+              to={link.path}
+              className={({ isActive }) =>
+                isActive ? styles["active"] : styles[""]
+              }
+            >
+              {link.title}
+            </NavLink>
           </li>
         ))}
       </ul>
