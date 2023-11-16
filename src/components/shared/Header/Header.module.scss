@@ -53,6 +53,10 @@
         $map: variables.$light-theme,
         $key: "background-white-1"
       );
+
+      a {
+        color: map-get($map: variables.$light-theme, $key: "text-black-1");
+      }
     }
 
     &--light {
@@ -60,6 +64,10 @@
         $map: variables.$dark-theme,
         $key: "background-black-1"
       );
+
+      a {
+        color: map-get($map: variables.$dark-theme, $key: "text-white-1");
+      }
     }
   }
 

@@ -16,7 +16,6 @@ import { BurgerIcon } from "../../../assets/icons/BurgerIcon/BurgerIcon";
 
 import styles from "./Header.module.scss";
 import { SvgIcon } from "../../../assets/icons/SvgIcon/SvgIcon";
-import { MobileMenu2 } from "../MobileMenu2/MobileMenu2";
 
 type HeaderProps = {
   className?: string;
@@ -48,7 +47,6 @@ const Header: FC<HeaderProps> = ({ className, icon }) => {
 
   const handleToggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    // console.log("handleToggleMobileMenu clicked");
   };
 
   return (
@@ -63,19 +61,10 @@ const Header: FC<HeaderProps> = ({ className, icon }) => {
         {icon && <Icon icon={icon} />}
       </div>
 
-      {/* <MobileMenu
+      <MobileMenu
         icon={<SvgIcon color1="#000000" color2="#FFFFFF" width={40} />}
         isMenuOpen={isMenuOpen}
-        className={`${styles["header__mobile-menu"]} ${
-          darkMode
-            ? styles["header__mobile-menu--dark"]
-            : styles["header__mobile-menu--light"]
-        }`}
-      /> */}
-
-      <MobileMenu2
-        icon={<SvgIcon color1="#000000" color2="#FFFFFF" width={40} />}
-        isMenuOpen={isMenuOpen}
+        toggleMenu={handleToggleMobileMenu}
         className={`${styles["header__mobile-menu"]} ${
           darkMode
             ? styles["header__mobile-menu--dark"]
